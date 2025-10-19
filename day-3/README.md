@@ -137,3 +137,23 @@ Differentiating between On-Demand, Reserved, and Spot instances.
 
 ## To update all the packages of the ec2 instance:
 - apt update
+
+## Deploy Jinkins to EC2 instance
+- Install Java :
+  - apt install openjdk-17-jdk
+  - Verify java installed or not : java --version
+- Install Jenkins according to OS : https://www.jenkins.io/doc/book/installing/linux/
+  - ```
+    sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+    sudo dnf upgrade
+    # Add required dependencies for the jenkins package
+    sudo dnf install fontconfig java-21-openjdk
+    sudo dnf install jenkins
+    sudo systemctl daemon-reload
+    ```
+   - Verify Installation : sudo systemctl status jenkins
+ - Verify Jenkins is running or not using public ip address of EC2 on port 8080:
+   - Configure inbound traffic for port 8080 from anywhere in the world
+   - Hit : https://<public_ip_address_of_ec2_instance>:<port_of_jenkins>
