@@ -131,3 +131,7 @@ Differentiating between On-Demand, Reserved, and Spot instances.
 - Starting, stopping, and terminating instances.
 - Monitoring instance performance and utilization.
 - Basic troubleshooting and accessing instances using SSH (Secure Shell).
+
+
+## Login into EC2 instance from MAC Terminal
+- ssh -i <path_to_the_pem_file> <username>@<public_ip_address>
