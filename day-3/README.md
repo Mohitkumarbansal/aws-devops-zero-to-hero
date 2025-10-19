@@ -131,3 +131,9 @@ Differentiating between On-Demand, Reserved, and Spot instances.
 - Starting, stopping, and terminating instances.
 - Monitoring instance performance and utilization.
 - Basic troubleshooting and accessing instances using SSH (Secure Shell).
+
+## Login to EC2 Instance:
+- ssh -i <path_to_pem_file> <username>@<public_ip_address>
+
+## To update all the packages of the ec2 instance:
+- apt update
